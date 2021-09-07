@@ -12,9 +12,13 @@
     <img v-bind:src="img" v-bind:alt="name">
     <h1>
       {{ name }}
-      <span v-if="changePercent > 0"> Mayor a cero👍</span>
-      <span v-else-if="changePercent < 0"> Menor a cero👎</span>
-      <span v-else> cero 👌</span>
+      <span v-if="changePercent > 0">👍</span>
+      <span v-else-if="changePercent < 0">👎</span>
+      <span v-else>✌</span>
+
+      <span v-show="changePercent > 0">👍</span>
+      <span v-show="changePercent < 0">👎</span>
+      <span v-show="changePercent == 0">✌</span>
     </h1>
   </div>
 
