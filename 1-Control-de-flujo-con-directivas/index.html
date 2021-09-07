@@ -13,7 +13,8 @@
     <h1>
       {{ name }}
       <span v-if="changePercent > 0"> Mayor a cero👍</span>
-      <span v-else> Menor a cero👎</span>
+      <span v-else-if="changePercent < 0"> Menor a cero👎</span>
+      <span v-else> cero 👌</span>
     </h1>
   </div>
 
