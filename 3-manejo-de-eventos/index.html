@@ -17,7 +17,9 @@
       <span v-else>✌</span>
     </h1>
     
-    <span v-on:click="toggleShowPrices">Ver precios</span>
+    <span v-on:click="toggleShowPrices">
+      {{ showPrices ? 'Hide Prices🙈' : 'Show Prices 🐵' }}
+    </span>
     <!-- Si showPrices es true la lista se muestra -->
     <ul v-show=showPrices>
       <li v-for="(p, idx) in pricesWithDays" v-bind:key="p.day">
