@@ -30,6 +30,13 @@ new Vue({
       return `${this.name} - ${this.symbol}`
     }
   },
+
+  watch: {
+    showPrices (newVal, oldVal) {
+      console.log(`Nuevo: ${newVal} viejo: ${oldVal}`)
+    }
+  },
+
   methods: {
     toggleShowPrices() {
       this.showPrices = !this.showPrices
