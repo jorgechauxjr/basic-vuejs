@@ -27,6 +27,7 @@
     <ul v-show=showPrices>
       <!-- si el valor del bitcoin es igual a precio entonces se pone color naranja -->
       <li
+        class="uppercase"
         v-bind:class="{ orange: p.value == price, red: p.value < price, green: p.value > price }"
         v-for="(p, idx) in pricesWithDays"
         v-bind:key="p.day">
