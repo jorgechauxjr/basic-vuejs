@@ -13,21 +13,23 @@
       Mis Cursos de Platzi💚
     </h1>
       <p>
-        <input type="text" placeholder="Titulo del curso"/>
+        <input type="text" placeholder="Titulo del curso" v-model="title"/>
       </p>
       <p>
-        <input type="number" placeholder="Horas"/>
+        <input type="number" placeholder="Horas" v-model="time"/>
       </p>
       <p>
-        <button>Guardar Curso</button>
+        <button v-on:click="addCourse">Guardar Curso</button>
       </p>
     </fieldset>
     <div>
       <h3>Lista de Cursos</h3>
-      <p class="red">Aun no has realizado cursos</p>
-      <div>
+      <p class="red" v-show="!courses.length">Aun no has realizado cursos</p>
+      <div v-show="courses.length">
         <ol>
-          <!-- Lista de cursos -->
+          <li v-for="c in courses">
+            <span>{{ c.title }} - {{ c.time }} hrs</span>
+          </li>
         </ol>
         <hr/>
         <p>
