@@ -4,10 +4,18 @@ Vue.component("counter", {
       counter: 0
     }
   },
-  
+
+  methods: {
+    increment() {
+      this.counter += 1
+    }
+
+  },
+
+
   template: `
     <div>
-      <button> Click me </button>
+      <button v-on:click="increment"> Click me </button>
       <span> {{ counter }} </span>
     </div>
   `
