@@ -12,7 +12,7 @@ Vue.component("CoinDetail", {
     toggleShowPrices () {
       this.showPrices = !this.showPrices
 
-      this.$emit('change-color')
+      this.$emit('change-color', this.showPrices ? 'FF96C8' : '3D3D3D')
     }
   },
 
@@ -87,10 +87,11 @@ new Vue({
      color: 'f4f4f4'
     }
   },
-
+// La variable theColor es el color recibido de la linbea 15
+// L94 si el color existe lo usa, sino reversa this.color
   methods: {
-    updateColor () {
-      this.color = this.color
+    updateColor (theColor) {
+      this.color = theColor || this.color
         .split('')
         .reverse()
         .join('')
