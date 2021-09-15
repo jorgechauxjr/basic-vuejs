@@ -3,6 +3,12 @@
 Vue.component('modal', {
   props: ['title'],
 
+  methods: {
+    close() {
+      this.$emit('close')
+    }
+  },
+
   template: `
     <div class="modal-mask">
       <div class="modal-wrapper">

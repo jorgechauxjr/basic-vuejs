@@ -9,9 +9,13 @@
 </head>
 <body>
   <div id="app">
-    <button>Show Modal</button>
+    <button v-on:click="toggleModal">Show Modal</button>
     
-    <modal></modal>
+    <modal v-show="showModal"
+            v-on:close="toggleModal"
+            v-bind:title="title">
+      <p slot="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, quos magnam perferendis exercitationem molestiae commodi pariatur odio debitis fuga ut deserunt eius eos numquam ad incidunt optio, fugiat rerum natus.</p>
+    </modal>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
