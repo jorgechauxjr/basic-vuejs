@@ -12,10 +12,15 @@
     <coin-detail
       v-on:change-color="updateColor"
       v-bind:coin="btc">
-    </coin-detail>
-    <coin-detail
-      v-on:change-color="updateColor"
-      v-bind:coin="btc">
+      
+      <template v-slot:text>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat accusamus a, velit exercitationem excepturi vel animi cumque omnis. Quo voluptatibus sequi quisquam placeat porro, tempore eum. Molestias porro dolorem ratione?</p>
+      </template>
+
+      <template v-slot:link>
+        <a href="#">Link!</a>
+      </template>
+      
     </coin-detail>
   </div>
 
