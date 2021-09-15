@@ -1,3 +1,5 @@
+// ============== Componente hijo llamado CoinDetail ============
+
 Vue.component("CoinDetail", {
   props: ['coin'],
 
@@ -6,6 +8,15 @@ Vue.component("CoinDetail", {
       showPrices: false,
       value: 0
     }
+  },
+
+   // == Lifecycles y hooks ==
+   created() {
+    console.log("CREATED component COIN DETAILS")
+  },
+
+  mounted() {
+    console.log("MOUNTED component COIN DETAILS")
   },
 
   methods: {
@@ -64,6 +75,7 @@ Vue.component("CoinDetail", {
   `
 })
 
+// ============  Componente Padre ===============
 new Vue({
   el: '#app',
 
@@ -90,6 +102,15 @@ new Vue({
      color: 'f4f4f4'
     }
   },
+    // == Lifecycles y hooks ==
+  created() {
+    console.log("CREATED component Padre")
+  },
+
+  mounted() {
+    console.log("MOUNTED component Padre")
+  },
+
 
 // La variable theColor es el color recibido de la linbea 15
 // L94 si el color existe lo usa, sino reversa this.color
