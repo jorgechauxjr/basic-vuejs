@@ -1,18 +1,38 @@
+// ==== Componente modal =====
+
 Vue.component('modal', {
+  props: ['title'],
+
   template: `
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
-          <h3>title</h3>
-          <div>body</div>
+          <h3>{{ title }}</h3>
+          <div>
+            <slot name="body"></slot>
+          </div>
           <footer>
-            <button>Cerrar</button>
+            <button v-on:click="close">Cerrar</button>
           </footer>
         </div>
       </div>
     </div>`
 })
 
+// ==== Componente padre ====
+
 new Vue({
-  el: '#app'
+  el: '#app',
+
+  data() {
+    return {
+      title: 'Titulo del modal',
+      showModal: false
+    }
+  },
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal
+    }
+  }
 })
